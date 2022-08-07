@@ -7,7 +7,11 @@ const ImagesSchema = new mongoose.Schema({
 	},
 });
 
-const customSchema = new Schema({
+const customSchema = new mongoose.Schema({
+	CS:{
+		type: String,
+		default: 'custom'
+	},
 	promotions: {
 		type: String,
 		required: true,
@@ -32,6 +36,11 @@ const customSchema = new Schema({
 			},
 		},
 	],
+	picturestyle: {
+		type: String,
+		required: true,
+		default: "grid",
+	},
 	gridpictures: [ImagesSchema],
 	sliderpictures: [ImagesSchema],
 	theme: {
@@ -41,4 +50,4 @@ const customSchema = new Schema({
 
 const CS_custom = mongoose.model("CS_custom", customSchema);
 
-module.exports = CS_apt;
+module.exports = CS_custom;

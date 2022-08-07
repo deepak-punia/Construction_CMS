@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const slotSchema = new Schema ({
+const slotSchema = new mongoose.Schema ({
     apt_time: {
 		type: String,
         required: true
