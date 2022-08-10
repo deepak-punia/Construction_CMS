@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
 				.json({ errors: [{ msg: "No Custom settings found." }] });
 		}
 
-		res.json(custom);
+		res.json(custom[0]);
 	} catch (err) {
 		console.log(err);
 		res.status(500).send("Server Error");
