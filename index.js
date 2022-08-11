@@ -20,6 +20,7 @@ app.use(express.json());
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/customizations', require('./routes/api/customizations'));
 app.use('/api/appointments', require('./routes/api/appointment'));
+app.use("/uploads", express.static("uploads"));
 
 app.listen(PORT, () => {
 	console.log(`Server is running at port : ${PORT}`);
