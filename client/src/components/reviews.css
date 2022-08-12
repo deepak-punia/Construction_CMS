@@ -1,0 +1,26 @@
+/* Reviews */
+.review-container {
+    max-width: 400px;
+    height: auto;
+  }
+  .mySwiper {
+    height: 100%;
+    width: 100%;
+  }
+  .mySwiper img {
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+  @media only screen and (max-width: 440px) {
+
+
+    .review-container {
+      max-width: 300px;
+      height: auto;
+    }
+  
+  
+  
+  }

@@ -8,8 +8,8 @@ const CS_users = require("../../models/users");
 
 //@route     GET api/appointments/
 //@desc      Get all appointments
-//@access    Private, Admin only
-router.get("/", user, admin, async (req, res) => {
+//@access    Private
+router.get("/", user, async (req, res) => {
 	try {
 		const apt = await CS_apt.find();
 		if (!apt) {

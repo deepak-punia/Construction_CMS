@@ -1,0 +1,71 @@
+.contact-container {
+    width: 400px;
+    height: 475px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+}
+.contact-top{
+    background-color: #686de0;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    
+}
+.contact-top h3 {
+    margin: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+.contact-bottom{
+    padding: 40px 40px 80px;
+    max-height: 335px;
+}
+
+/* Contact information inside card */
+.contact_info {
+    display: flex;
+    justify-content: center;
+    color: black;
+    gap: 10px;
+  }
+  
+  .contact_info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .contact_info .fa:hover {
+    color: var(--seconday-color);
+  }
+  .contact_info p {
+    line-height: 1.4;
+  }
+  .contact_info .fa {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    line-height: 30px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+  }
+  
+
+@media only screen and (max-width: 440px) {
+
+
+    .contact-container {
+        width: 300px;
+        height: 475px;
+    }
+
+
+
+}

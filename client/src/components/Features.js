@@ -23,7 +23,7 @@ const Features = () => {
       <div className='typer'>We build <div><ul><li>Side entrances.</li><li>basements.</li><li>driveways.</li>doors and windows.</ul></div></div>
       <div className="features_content">
         <div className="feature_1 card">
-          <img src="/17.jpg" alt="doors" style={{width: "100%"}} />
+          <img src="https://samarbath.netlify.app/17.jpg" alt="doors" className='feature-image' />
 
           <h3>Side entrances</h3>
           <p>
@@ -32,7 +32,7 @@ const Features = () => {
           </p>
         </div>
         <div className="feature_2 card">
-          <img src="/18.jpg" alt="windows" style={{width: "100%"}} />
+          <img src="https://samarbath.netlify.app/18.jpg" alt="windows" className='feature-image' />
           <h3>Doors</h3>
           <p>
             We build and install custom doors.<br />
@@ -40,7 +40,7 @@ const Features = () => {
           </p>
         </div>
         <div className="feature_3 card">
-          <img src="/19.jpg" alt="entrances" style={{width: "100%"}} />
+          <img src="https://samarbath.netlify.app/19.jpg" alt="entrances" className='feature-image' />
           <h3>Windows</h3>
           <p>
             We build and install custom doors.<br />
