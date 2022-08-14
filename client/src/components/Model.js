@@ -1,6 +1,6 @@
 import React from 'react';
 import './model.css';
-import Appointment from './Appointment';
+import Login from './Login';
 
 const Model = () => {
    
@@ -14,7 +14,7 @@ const Model = () => {
     <div id="myModal" className="modal">
       <div className="modal-content">
         <span onClick={closeModel} className="close">&times;</span>
-        <Appointment />
+        <Login />
       </div>
     </div>
   );

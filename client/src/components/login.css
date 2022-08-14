@@ -1,0 +1,9 @@
+.loginform input,textarea {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  width: 100%;
+  padding: 5px 10px;
+}
+.loginform input, textarea:focus-within {
+  outline: none;
+}

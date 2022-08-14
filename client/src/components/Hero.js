@@ -1,10 +1,22 @@
 import React from 'react';
-import './hero.css'
+import './hero.css';
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.auth);
   const displayModel = () => {
+
+    if (user.isAuthenticated && user.user?.role === "user") {
+			navigate("dashboard");
+		}
+		if (user.isAuthenticated && user.user?.role === "admin") {
+			navigate("admin");
+		}
+
 		const model = document.getElementById("myModal");
-        model.style.display="block";
+    model.style.display="block";
 		
 	};
   return (

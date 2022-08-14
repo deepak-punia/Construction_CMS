@@ -7,14 +7,14 @@ const Navbar = () => {
 		const nav = document.getElementById("mySidenav");
 
 		nav.style.width = "300px";
-    nav.style.boxShadow="0 0 8px 10px rgba(0,0,0,0.2)"
+		nav.style.boxShadow = "0 0 8px 10px rgba(0,0,0,0.2)";
 	};
 
 	const navcontrollerclose = () => {
 		const nav = document.getElementById("mySidenav");
 
 		nav.style.width = "0px";
-    nav.style.boxShadow="none"
+		nav.style.boxShadow = "none";
 	};
 
 	return (
@@ -47,15 +47,25 @@ const Navbar = () => {
 						</a>
 
 						<div className="nav">
-							<a href="#" onClick={navcontrollerclose}>Home </a>
+							<a href="#" onClick={navcontrollerclose}>
+								Home{" "}
+							</a>
 
-							<a href="#features" onClick={navcontrollerclose}>Features </a>
+							<a href="#features" onClick={navcontrollerclose}>
+								Features{" "}
+							</a>
 
-							<a href="#showcase" onClick={navcontrollerclose}>Projects </a>
+							<a href="#showcase" onClick={navcontrollerclose}>
+								Projects{" "}
+							</a>
 
-							<a href="#reviews" onClick={navcontrollerclose}>Reviews </a>
+							<a href="#reviews" onClick={navcontrollerclose}>
+								Reviews{" "}
+							</a>
 
-							<a href="#contact" onClick={navcontrollerclose}>Contact </a>
+							<a href="#contact" onClick={navcontrollerclose}>
+								Contact{" "}
+							</a>
 						</div>
 					</div>
 				</div>

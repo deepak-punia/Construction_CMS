@@ -1,0 +1,9 @@
+.wrapper-dashboard-container{
+    display: flex;
+    height: 100vh;
+}
+
+.dashboard-container{
+    background-color: #f6f8fa;
+    flex: 1;
+}

@@ -1,0 +1,22 @@
+.alert {
+    padding: 20px;
+    color: white;
+  }
+  .alert div{
+    padding: 20px;
+    color: white;
+  }
+  
+.danger{
+    background-color: #f44336;
+}
+
+.info {
+    background-color: #2196F3;
+}
+.success{
+    background-color: #04AA6D;
+}
+.warning {
+    background-color: #ff9800;
+}

@@ -1,0 +1,68 @@
+.sidebar-container {
+    background-color: #1c1f25;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    color: antiquewhite;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    
+}
+.sidebar-container .closebtn {
+
+    position: absolute;
+
+    top: 5px;
+
+    right: 25px;
+
+    font-size: 36px;
+
+    margin-left: 50px;
+    cursor: pointer;
+    
+
+  }
+
+.sidebar-container .username{
+    font-size: 25px;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: #222427;
+    width: 100%;
+    text-align: center;
+    text-transform:capitalize;
+}
+.sidebar-container ul{
+    font-size: 25px;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+    
+    
+}
+.sidebar-container ul li a{
+    color: antiquewhite;
+}
+.sidebar-container ul li{
+    cursor: pointer;
+    width: 100%;
+    padding: 5px 0 5px 15px;
+}
+
+.sidebar-container ul li:hover{
+    background-color: #222427;
+    font-size: 105%;
+    transition: all 250ms;
+    
+}

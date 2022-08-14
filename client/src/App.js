@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loadData } from "./reducers/customSettings";
+import { loadUser } from "./reducers/auth";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -26,6 +27,7 @@ function App() {
 
 	useEffect(() => {
 		dispatch(loadData());
+		dispatch(loadUser());
 	}, []);
 	return (
 		<div className="App">
