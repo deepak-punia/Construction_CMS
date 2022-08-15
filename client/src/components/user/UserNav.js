@@ -35,6 +35,7 @@ const UserNav = () => {
 	return (
 		<>
 			<nav id="header" className="header">
+
 				{sidebar ? (
 					<span
 						className="sidebar-control-button"

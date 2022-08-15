@@ -1,8 +1,11 @@
 .aptDetails table {
     border-collapse: collapse;
     width: 100%;
-  }
   
+  }
+  .aptDetails{
+    margin: 0 10px;
+  }
   .aptDetails table th, td {
     padding: 8px;
     text-align: left;

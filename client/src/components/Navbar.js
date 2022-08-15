@@ -39,7 +39,7 @@ const Navbar = () => {
 						onClick={navcontrolleropen}
 					>
 						&#9776;
-					</span>
+					</span> 
 
 					<div id="mySidenav" className="sidenav">
 						<a href="#" className="closebtn" onClick={navcontrollerclose}>

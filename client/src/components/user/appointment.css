@@ -1,0 +1,13 @@
+.show-apt-data, .bookappointment-container {
+    margin: 10px;
+}
+
+.show-apt-header {
+    background-color: var(--primary-color);
+    padding: 5px 5px 5px 15px;
+    
+}
+
+.dashboard-container .card {
+    padding: 0;
+}
