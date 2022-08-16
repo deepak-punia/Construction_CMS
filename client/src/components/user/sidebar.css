@@ -1,6 +1,7 @@
 .sidebar-container {
     background-color: #1c1f25;
     min-width: 250px;
+    width: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -9,8 +10,10 @@
     color: antiquewhite;
     position: relative;
     transition: all 0.5s ease-in-out;
+    overflow: hidden;
     
 }
+
 .sidebar-container .closebtn {
 
     position: absolute;
@@ -48,6 +51,7 @@
     padding: 0;
     gap: 10px;
     width: 100%;
+    height: auto;
     
     
 }
@@ -65,4 +69,14 @@
     font-size: 105%;
     transition: all 250ms;
     
+}
+@media only screen and (max-width: 675px) {
+    .sidebar-container {
+        width: 100%;
+        height: 0px;
+        
+    } 
+    .sidebar-container ul{
+        font-size: 15px;
+    }
 }

@@ -7,3 +7,8 @@
     background-color: #f6f8fa;
     flex: 1;
 }
+@media only screen and (max-width: 675px) {
+    .wrapper-dashboard-container{
+        flex-direction: column;
+    }
+}

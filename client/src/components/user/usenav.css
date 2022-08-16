@@ -1,0 +1,14 @@
+.sidebar-control-button{
+    display: block;
+}
+.sidebar-control-button1{
+    display: none;
+}
+@media only screen and (max-width: 675px) {
+    .sidebar-control-button{
+        display: none;
+    }
+    .sidebar-control-button1{
+        display: block;
+    }
+}
