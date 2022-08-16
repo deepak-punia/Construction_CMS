@@ -8,20 +8,20 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.auth);
-    const handlelogout = () => {
-        setAuthToken();
+	const handlelogout = () => {
+		setAuthToken();
 		dispatch(logout());
 	};
 
-    
-
 	if (user.user.role === "user") {
 		return (
-			<div id='sidebar-container' className="sidebar-container">
-				<div className="username">{ user.user.username}</div>
+			<div id="sidebar-container" className="sidebar-container">
+				<div className="username">{user.user.username}</div>
 
 				<ul>
-					<li><Link to="/dashboard">Dashboard</Link></li>
+					<li>
+						<Link to="/dashboard">Dashboard</Link>
+					</li>
 					<li onClick={handlelogout}>Logout</li>
 				</ul>
 			</div>
@@ -29,14 +29,32 @@ const Sidebar = () => {
 	}
 	if (user.user.role === "admin") {
 		return (
-			<div id='sidebar-container' className="sidebar-container">
-               
-				<div className="username">{ user.user.username}</div>
+			<div id="sidebar-container" className="sidebar-container">
+				<div className="username">{user.user.username}</div>
 
 				<ul>
-					<li>Link 1</li>
-					<li>Link 2</li>
-                    <li onClick={handlelogout}>Logout</li>
+					<li>
+						<Link to="/admin">Dashboard</Link>
+					</li>
+					<li>
+						<Link to="appointments">All Appointments</Link>
+					</li>
+					<li>
+						<Link to="users">All Users</Link>
+					</li>
+					<li>
+						<Link to="settings">Settings</Link>
+					</li>
+					<li>
+						<Link to="reviews">Reviews</Link>
+					</li>
+					<li>
+						<Link to="gridsettings">Grid Settings</Link>
+					</li>
+					<li>
+						<Link to="slidersettings">Slider Settings</Link>
+					</li>
+					<li onClick={handlelogout}>Logout</li>
 				</ul>
 			</div>
 		);
