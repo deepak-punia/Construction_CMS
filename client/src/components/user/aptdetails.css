@@ -5,6 +5,7 @@
   }
   .aptDetails{
     margin: 0 10px;
+    flex: 1;
   }
   .aptDetails table th, td {
     padding: 8px;

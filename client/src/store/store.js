@@ -3,6 +3,7 @@ import authReducer from '../reducers/auth';
 import customSettingsReducer from '../reducers/customSettings';
 import alertReducer from '../reducers/alert';
 import appointments from '../reducers/appointments';
+import settings from '../reducers/settings';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     settings: customSettingsReducer,
     alert: alertReducer,
     appointments,
+    admin: settings
   }
 })

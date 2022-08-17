@@ -199,4 +199,27 @@ router.post("/user/:id", user, async (req, res) => {
 	}
 });
 
+//@route     GET api/users/user/:id
+//@desc      GET User details with ID
+//@access    Private
+router.get("/user/:id", user, async (req, res) => {
+	const id = req.params.id;
+	if (!id) {
+		res.status(400).json({ errors: [{ msg: "User ID is required." }] });
+	}
+	try {
+		const user = await CS_users.findOne({ _id: id }).select(
+			"-password"
+		);		
+		if (!user) {
+			return res.status(400).json({ errors: [{ msg: "No User found." }] });
+		}
+
+		res.json(user);
+	} catch (err) {
+		console.log(err);
+		res.status(500).send("Server Error");
+	}
+});
+
 module.exports = router;

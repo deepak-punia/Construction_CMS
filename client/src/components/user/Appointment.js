@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./appointment.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getuserapt, getallapt } from "../../reducers/appointments";
@@ -6,34 +6,38 @@ import AptDetails from "./AptDetails";
 import BookAppointment from "./BookAppointment";
 
 const Appointment = () => {
-
-	const dispatch = useDispatch();
-	const appointments = useSelector((state) => state.appointments);
+  const dispatch = useDispatch();
+  const appointments = useSelector((state) => state.appointments);
   const id = useSelector((state) => state.auth.user._id);
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getallapt());
-    dispatch(getuserapt({id}))
-  },[]);
+    dispatch(getuserapt({ id }));
+  }, []);
 
-  if(appointments.loading){
-    return(
-      <div className="lalery warning">Loading...</div>
-    )
+  if (appointments.loading) {
+    return <div className="lalery warning">Loading...</div>;
   }
-  
-	return (
+
+  return (
     <>
-  <div className="show-apt-data card">
-    <div className="show-apt-header"><h2>Confirmed Appointment</h2></div>
-    <AptDetails aptData={appointments.allapt} />
-  </div>
-    <div className="bookappointment-container card">
-    <div className="show-apt-header"><h2>Book Appointment</h2></div>
-    <BookAppointment />
-  </div>
-  
-  </>
+      <div className="show-apt-data card">
+        <div className="show-apt-header">
+          <h2>Confirmed Appointment</h2>
+        </div>
+
+        <div style={{ display: "flex" }}>
+          <AptDetails aptData={appointments.userapt} />
+          <div id="apt-info-data" className="apt-info-data"></div>
+        </div>
+      </div>
+      <div className="bookappointment-container card">
+        <div className="show-apt-header">
+          <h2>Book Appointment</h2>
+        </div>
+        <BookAppointment />
+      </div>
+    </>
   );
 };
 
