@@ -1,9 +1,10 @@
-.loginform input,textarea {
+.contact_info input,textarea {
   border: none;
-  border-bottom: 2px solid var(--primary-color);
-  width: 100%;
-  padding: 5px 10px;
+    border-bottom: 2px solid var(--primary-color);
+    width: 100%;
+    padding: 5px 10px;
+    height: 40px;
 }
-.loginform input, textarea:focus-within {
+.contact_info input, textarea:focus-within {
   outline: none;
 }

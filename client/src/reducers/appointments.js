@@ -45,7 +45,6 @@ export const deleteapt = createAsyncThunk("api/deleteuserapt", async ({ id}) => 
         
     );
 
-
 	return response.data;
 });
 
@@ -86,7 +85,7 @@ export const appointments = createSlice({
 			})
 			.addCase(adduserapt.fulfilled, (state, action) => {
 				state.loading = false;
-				state.userapt = action.payload;
+				state.userapt = [...state.userapt , action.payload];
 			})
 			.addCase(adduserapt.rejected, (state, action) => {
 				state.loading = false;

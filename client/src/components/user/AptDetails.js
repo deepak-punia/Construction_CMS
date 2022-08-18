@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 const AptDetails = ({ aptData }) => {
 	const user_id = useSelector((state) => state.auth.user._id);
 	const id1 = useSelector((state) => state.admin);
+	const apt = useSelector((state) => state.appointments);
 	const dispatch = useDispatch();
 	if (!aptData) {
 		return <div className="alert info">You don't have any appointment.</div>;
@@ -14,10 +15,15 @@ const AptDetails = ({ aptData }) => {
 	if (aptData.length === 0) {
 		return <div className="alert info">You don't have any appointment.</div>;
 	}
+	if (apt.loading) {
+		return <div className="alert info">Loading...</div>;
+	}
 	const info = document.getElementById("apt-info-data");
-	info.innerHTML = id1.loading
+	if(info)
+	{info.innerHTML = id1.loading
 		? "<h2>Loading...</h2>"
 		: `<div>${id1?.userdetails?.username}</div><div>${id1?.userdetails?.phone}</div>`;
+}
 	const handeaptClick = (id) => {
 		console.log("ok");
 		const info1 = document.getElementById("apt-info-data");
@@ -63,12 +69,12 @@ const AptDetails = ({ aptData }) => {
 					<th>More Details</th>
 				</tr>
 
-				{aptData.map((item, index) => {
+				{aptData?.map((item, index) => {
 					const readableDate = formattingDate(item.apt_date);
 					const readableTime = formattime(item.apt_time);
 					return (
 						<tr key={index}>
-							<td onClick={() => handeaptClick(item.user)}>{readableDate}</td>
+							<td  style={{cursor: 'pointer'}} onClick={() => handeaptClick(item.user)}>{readableDate}</td>
 							<td>{readableTime[0] + ":" + readableTime[1]}</td>
 							<td>
 								<div

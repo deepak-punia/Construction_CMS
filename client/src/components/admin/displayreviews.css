@@ -1,0 +1,44 @@
+.display-review-container{
+    width: 240px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    border: 1px lightgray solid;
+    margin: 10px 0px 10px 10px;
+}
+.display-review-name{
+    background-color: var(--primary-color);
+    padding: 5px 5px 5px 15px;
+}
+.display-review-position{
+    padding: 5px 5px 5px 15px;
+}
+.display-review-details{
+    color: #555;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0;
+    padding: 5px 5px 5px 15px;
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+.display-review-button{
+    
+    align-self: center;
+    margin-bottom: 2px;
+}
+
+  .display-review-container input {
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    width: 100%;
+    padding: 5px 10px;
+    height: 40px;
+  }
+  .display-review-container input:focus-within {
+    outline: none;
+  }
+
+  

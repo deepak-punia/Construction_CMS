@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease;
-    padding: 0 10px;
+    overflow: hidden;
+    font-size: 18px;
 }
 
 .settings-container{
@@ -85,6 +86,32 @@
       background: white;
   }
 
+  .promo-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  .promo-info input {
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    width: 100%;
+    padding: 5px 10px;
+    height: 40px;
+  }
+  .loginform input:focus-within {
+    outline: none;
+  }
+
+  /* reviews */
+  .reviews-edit-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
   @media only screen and (max-width: 675px) {
     .settings-container{
         flex-direction: column;
@@ -95,7 +122,9 @@
 
     } 
     .apt-info-data{
-      padding: 15px;
       gap: 10px;
+      position: fixed;
+      background-color: var(--seconday-color);
+      
     }
 }

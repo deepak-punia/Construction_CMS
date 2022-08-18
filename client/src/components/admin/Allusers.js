@@ -36,7 +36,7 @@ const Allusers = () => {
               <td>{item.email}</td>
               <td>{item.phone}
               </td>
-              <td onClick={() => handeDeleteUserClick(item._id)}>X</td>
+              <td style={{cursor: 'pointer'}} onClick={() => handeDeleteUserClick(item._id)}>X</td>
             </tr>
           );
         })}

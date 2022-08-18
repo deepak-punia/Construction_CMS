@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updatePicturesStyles, togglePromotions } from "../../reducers/settings";
+import { updatePicturesStyles, togglePromotions,updatePromo } from "../../reducers/settings";
 
 const Settings = () => {
 	const dispatch = useDispatch();
+
 
   //pictures display style
 	const radiovalue = useSelector((state) => state.settings.data.picturestyle);
@@ -18,6 +19,14 @@ const Settings = () => {
 	const handleRadioUpdate1 = () => {
 		dispatch(togglePromotions({ style: radio1 }));
 	};
+
+	const promovalue = useSelector((state) => state.settings.data);
+	const [title, setTitle] = useState(promovalue ? promovalue.promotitle : null);
+	const [details, setDetails] = useState(promovalue ? promovalue.promodetails : null);
+
+	const handlePromoUpdate=()=>{
+		dispatch(updatePromo({title,details}))
+	}
 	return (
 		<div>
 			{/* Grid or Slider */}
@@ -80,6 +89,30 @@ const Settings = () => {
 					<button class="select-button" onClick={handleRadioUpdate1}>
 						Update
 					</button>
+				</div>
+			</div>
+
+			{/* Promotiona Update Details */}
+			<div className="show-apt-data card">
+				<div className="show-apt-header">
+					<h2>Promotion Details</h2>
+				</div>
+				<div className="promo-info">
+				<p>
+								<input type="text" name="title"  value={title} 
+                                onChange={(e) => setTitle(e.target.value)}/>
+							</p>
+							<p>
+								<input type="text" name="details"  value={details}
+                                onChange={(e) => setDetails(e.target.value)}
+                                />
+							</p>
+							
+							<p>
+								<button className="select-button" onClick={handlePromoUpdate}>
+									Update
+								</button>
+							</p>
 				</div>
 			</div>
 		</div>
