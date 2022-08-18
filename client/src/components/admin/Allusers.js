@@ -29,7 +29,7 @@ const Allusers = () => {
           <th>Delete</th>
         </tr>
 
-        {users.map((item, index) => {
+        {users?.map((item, index) => {
           return (
             <tr key={index}>
               <td>{item.username}</td>

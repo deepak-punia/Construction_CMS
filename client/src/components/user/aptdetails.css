@@ -14,3 +14,9 @@
   }
   
   .aptDetails table  tr:hover {background-color: #D6EEEE;}
+
+  @media only screen and (max-width: 675px) {
+    .show-apt-data:nth-child(2){
+      flex-direction: column-reverse;
+    }  
+  }

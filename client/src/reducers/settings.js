@@ -38,6 +38,38 @@ export const deleteUser = createAsyncThunk(
   }
 );
 
+export const updatePicturesStyles = createAsyncThunk(
+  "api/updatePicturesStyles",
+  async ({ style }) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const response = await axios.post(
+      `${API_ENDPOINT}/api/customizations/pictures/style/${style}`,
+      config
+    );
+    return response.data;
+  }
+);
+
+export const togglePromotions = createAsyncThunk(
+  "api/togglePromotions",
+  async ({ style }) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const response = await axios.post(
+      `${API_ENDPOINT}/api/customizations/promotion/${style}`,
+      config
+    );
+    return response.data;
+  }
+);
+
 export const settings = createSlice({
   name: "getUserWithId",
   initialState,
@@ -79,6 +111,30 @@ export const settings = createSlice({
         state.loading = false;
         state.error = action.payload;
         console.log("error in deleteUser");
+      })
+      .addCase(updatePicturesStyles.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(updatePicturesStyles.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(updatePicturesStyles.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+        console.log("error in updatePicturesStyles");
+      })
+      .addCase(togglePromotions.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(togglePromotions.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(togglePromotions.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+        console.log("error in togglePromotions");
       });
   },
 });

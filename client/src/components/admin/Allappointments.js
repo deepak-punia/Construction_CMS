@@ -11,7 +11,7 @@ const Allappointments = () => {
         <div className="show-apt-header">
           <h2>All Appointments</h2>
         </div>
-        <div style={{ display: "flex" }}>
+        <div className="show-apt-data-2" style={{ display: "flex" }}>
           <AptDetails aptData={appointments} />
           <div id="apt-info-data" className="apt-info-data"></div>
         </div>
