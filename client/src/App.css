@@ -209,6 +209,10 @@ a {
   height: 30px;
   text-align: center;
 }
+.information-section span {
+  display: flex;
+  align-items: center;
+}
 
 @media only screen and (max-width: 990px) {
   
