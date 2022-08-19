@@ -52,11 +52,7 @@ function App() {
 			) : (
 				<></>
 			)}
-			{sliderImages && sliderImages.length > 0 ? (
-				<Slider images={sliderImages} />
-			) : (
-				<></>
-			)}
+			
 			{/* Reviews */}
 			<div id="reviews" className="review-main-conatiner">
 				<div className="review-left">
