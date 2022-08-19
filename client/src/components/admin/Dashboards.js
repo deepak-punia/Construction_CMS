@@ -40,7 +40,11 @@ const Dashboards = () => {
         <div className="show-apt-info">
           <h2>Info</h2>
         </div>
-        some infor goes here
+        <div className="information-section">
+          <span><i class="fa fa-info-circle"></i> Click on a appointment to display appointment details.</span>
+          <span><i class="fa fa-info-circle"></i> Click on appointment details to hide details.</span>
+          <span><i class="fa fa-info-circle"></i> Click on cancel to delete appointment.</span>
+        </div>
       </div>
     </div>
   );

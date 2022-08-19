@@ -125,11 +125,11 @@ const Settings = () => {
 				<Alerts componentName={"handlePromoUpdate"} />
 				<div className="promo-info">
 				<p>
-								<input type="text" name="title"  value={title} 
+								<input type="text" name="title"  value={title} maxLength="20"
                                 onChange={(e) => setTitle(e.target.value)}/>
 							</p>
 							<p>
-								<input type="text" name="details"  value={details}
+								<input type="text" name="details"  value={details} maxLength="50"
                                 onChange={(e) => setDetails(e.target.value)}
                                 />
 							</p>

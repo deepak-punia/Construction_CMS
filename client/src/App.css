@@ -192,6 +192,24 @@ a {
   z-index: -1;
 }
 
+.information-section {
+  background-color: #fff2cc;
+  padding: 30px 15px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+.information-section .fa {
+  color: black;
+  font-size: 20px;
+  line-height: 30px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 990px) {
   
   .contact-right::after {

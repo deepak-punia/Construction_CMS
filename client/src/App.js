@@ -12,6 +12,7 @@ import Reviews from "./components/Reviews";
 import Model from "./components/Model";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Promotions from "./components/Promotions";
 
 function App() {
 	const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
 		<div className="App">
 			<Model />
 			<Navbar />
+			<Promotions />
 			<Hero />
 			<Features />
 			{pictureStyle === "grid" ? (
