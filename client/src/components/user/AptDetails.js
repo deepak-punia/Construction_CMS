@@ -22,12 +22,12 @@ const AptDetails = ({ aptData }) => {
 	if(info)
 	{info.innerHTML = id1.loading
 		? "<h2>Loading...</h2>"
-		: `<div>${id1?.userdetails?.username}</div><div>${id1?.userdetails?.phone}</div>`;
+		: `<div><i class="fa fa-user" aria-hidden="true"></i> ${id1?.userdetails?.username}</div><div><i class="fa fa-mobile" aria-hidden="true"></i> ${id1?.userdetails?.phone}</div>`;
 }
 	const handeaptClick = (id) => {
 		console.log("ok");
 		const info1 = document.getElementById("apt-info-data");
-		info1.style.width = "150px";
+		info1.style.width = "180px";
 		dispatch(getUserWithId({ id }));
 	};
 
