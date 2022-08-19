@@ -7,6 +7,7 @@ import settings from '../reducers/settings';
 
 export default configureStore({
   reducer: {
+    devTools: process.env.NODE_ENV !== 'production',
     auth: authReducer,
     settings: customSettingsReducer,
     alert: alertReducer,
