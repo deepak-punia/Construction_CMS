@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addReview } from "../../reducers/settings";
-import {loadData} from '../../reducers/customSettings'
+import {loadData} from '../../reducers/customSettings';
+import { setAlert } from "../../reducers/alert";
+import Alerts from '../Alerts';
 
 const AddReview = () => {
     const dispatch = useDispatch();
@@ -16,11 +18,11 @@ const AddReview = () => {
       setName("")
       setDetails("")
       setPosition("")
-      console.log('ok')
+      dispatch(setAlert({componentName:'review', alertType:'success', msg:'Review Added.'}));
     })
     .catch((rejectedValueOrSerializedError) => {
       // handle error here
-      console.log('error in handleReviewUpdate');
+      dispatch(setAlert({componentName:'review', alertType:'danger', msg:'Error. Please try again.'}));
     })
     
   };

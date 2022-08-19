@@ -23,6 +23,7 @@ export const login = createAsyncThunk('api/login', async ({ email, password }) =
         body,
         config
     );
+    console.log(response)
     return response.data;
   });
 
@@ -85,8 +86,9 @@ export const loadUser = createAsyncThunk('api/loadUser', async () => {
           state.loading = false;
           state.user = null;
           state.isAuthenticated=false;
-          state.error= action.payload;
+          state.error= action.error;
           console.log('error in Login');
+          console.log(action)
         })
         .addCase(register.pending, (state, action) => {
           state.loading = true;

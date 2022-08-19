@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addGridPicture, deleteGridPicture } from "../../reducers/settings";
 import { API_ENDPOINT } from "../../reducers/types";
 import { loadData } from "../../reducers/customSettings";
+import { setAlert } from "../../reducers/alert";
+import Alerts from '../Alerts';
 
 const Gridsettings = () => {
   const gridpictures = useSelector((state) => state.settings.data.gridpictures);
@@ -18,10 +20,11 @@ const Gridsettings = () => {
       .unwrap()
       .then((originalPromiseResult) => {
         dispatch(loadData());
+        dispatch(setAlert({componentName:'grid', alertType:'success', msg:'Picture Deleted.'}));
       })
       .catch((rejectedValueOrSerializedError) => {
         // handle error here
-        console.log("error in handleReviewUpdate");
+        dispatch(setAlert({componentName:'grid', alertType:'danger', msg:'Erron. Please try again.'}));
       });
   };
   const handleUploadSubmit = async (e) => {
@@ -33,10 +36,11 @@ const Gridsettings = () => {
       .then((originalPromiseResult) => {
         dispatch(loadData());
         setUploadfile("");
+        dispatch(setAlert({componentName:'grid', alertType:'success', msg:'Picture Uploaded.'}));
       })
       .catch((rejectedValueOrSerializedError) => {
         // handle error here
-        console.log("error in handleReviewUpdate");
+        dispatch(setAlert({componentName:'grid', alertType:'danger', msg:'Erron. Please try again.'}));
       });
   };
   return (
@@ -80,7 +84,8 @@ const Gridsettings = () => {
             </div>
           </div>
           {/* END > Add picture */}
-        </div>
+          
+        </div><Alerts componentName={"grid"} />
       </div>
 
       <div className="show-apt-data card">

@@ -18,9 +18,10 @@ const Register = ({setShow}) => {
 	const handleRegisterSubmit = (e) => {
 		e.preventDefault();
 		dispatch(register({ name,email,phone, password: pass })).unwrap().then((originalPromiseResult)=>
-			dispatch(loadUser())
-		).catch((e)=>console.log(e));
-	};
+			{dispatch(loadUser());
+			dispatch(setAlert({componentName:'register', alertType:'success', msg:'Registeration Successfull.'}))}
+		).catch((e)=>dispatch(setAlert({componentName:'register', alertType:'danger', msg:'Erron in Registeration. Please try again.'})));
+			}
 	const gotoDashboard = (e) => {
 		e.preventDefault();
 		if (user.isAuthenticated && user.user?.role === "user") {
@@ -34,12 +35,13 @@ const Register = ({setShow}) => {
 	// dispatch(setAlert({componentName:'login', alertType:'success', msg:'Login'}))
 	return (
 		<>
-			<Alerts componentName={"register"} />
+			
 			<div className="contact-container">
 				<div className="contact-top">
 					<h3>Register</h3>
 				</div>
 				<div className="contact-bottom">
+				<Alerts componentName={"register"} />
 					<div className="contact_info">
 						{(user.isAuthenticated && user.user) ? <div><button className="button" onClick={gotoDashboard}>
 									Go to Dashboard

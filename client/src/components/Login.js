@@ -16,8 +16,9 @@ const Login = ({setShow}) => {
 	const handleLoginSubmit = (e) => {
 		e.preventDefault();
 		dispatch(login({ email, password: pass })).unwrap().then((originalPromiseResult)=>
-			dispatch(loadUser())
-		).catch((e)=>console.log(e));
+			{dispatch(loadUser());
+				dispatch(setAlert({componentName:'login', alertType:'success', msg:'Logged in.'}));}
+		).catch((e)=>dispatch(setAlert({componentName:'login', alertType:'danger', msg:'Erron in Login. Please try again.'})));
 	};
 	const gotoDashboard = (e) => {
 		e.preventDefault();
@@ -32,12 +33,13 @@ const Login = ({setShow}) => {
 	// dispatch(setAlert({componentName:'login', alertType:'success', msg:'Login'}))
 	return (
 		<>
-			<Alerts componentName={"login"} />
+			
 			<div className="contact-container">
 				<div className="contact-top">
 					<h3>Login</h3>
 				</div>
 				<div className="contact-bottom">
+				<Alerts componentName={"login"} />
 					<div className="contact_info">
 						{(user.isAuthenticated && user.user) ? <div><button className="button" onClick={gotoDashboard}>
 									Go to Dashboard

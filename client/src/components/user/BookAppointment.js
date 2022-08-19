@@ -6,6 +6,8 @@ import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
 import { useSelector, useDispatch } from "react-redux";
 import { adduserapt,getuserapt, getallapt } from "../../reducers/appointments";
+import { setAlert } from "../../reducers/alert";
+import Alerts from '../Alerts';
 
 
 const BookAppointment = () => {
@@ -58,12 +60,16 @@ const BookAppointment = () => {
   const addApt = () => {
     dispatch(adduserapt({ apt_time: hour + "/" + minutes, apt_date: newdate })).unwrap().then((originalPromiseResult)=>
     {dispatch(getuserapt({id}))
-    dispatch(getallapt())}
-).catch((e)=>console.log(e));
+    dispatch(getallapt())
+    dispatch(setAlert({componentName:'apt', alertType:'success', msg:'Appointment is Confirmed.'}));}
+).catch((e)=>dispatch(setAlert({componentName:'apt', alertType:'danger', msg:'Erron in booking appointment. Please try again.'})));
    
   };
   return (
+    <>
+    <Alerts componentName={"apt"} />
     <div className="bookappointment-body">
+      
       <div className="item-1">
       <DatePicker
         wrapperClassName="date_picker full-width"
@@ -96,7 +102,7 @@ const BookAppointment = () => {
       
 
 
-    </div>
+    </div></>
   );
 };
 

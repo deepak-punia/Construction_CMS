@@ -3,6 +3,7 @@ import "./displayreviews.css";
 import { useDispatch } from "react-redux";
 import { deleteReview } from "../../reducers/settings";
 import { loadData } from "../../reducers/customSettings";
+import { setAlert } from "../../reducers/alert";
 
 const DisplayReviews = ({ review }) => {
   const dispatch = useDispatch();
@@ -11,10 +12,11 @@ const DisplayReviews = ({ review }) => {
       .unwrap()
       .then((originalPromiseResult) => {
         dispatch(loadData());
+        dispatch(setAlert({componentName:'review', alertType:'success', msg:'Review Deleted'}));
       })
       .catch((rejectedValueOrSerializedError) => {
         // handle error here
-        console.log("error in handleReviewUpdate");
+        dispatch(setAlert({componentName:'review', alertType:'danger', msg:'Erron. Please try again.'}));
       });
   };
   return (

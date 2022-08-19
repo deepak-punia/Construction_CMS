@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePicturesStyles, togglePromotions,updatePromo } from "../../reducers/settings";
+import { setAlert } from "../../reducers/alert";
+import Alerts from '../Alerts';
 
 const Settings = () => {
 	const dispatch = useDispatch();
@@ -10,14 +12,28 @@ const Settings = () => {
 	const radiovalue = useSelector((state) => state.settings.data.picturestyle);
 	const [radio, setRadio] = useState(radiovalue ? radiovalue : null);
 	const handleRadioUpdate = () => {
-		dispatch(updatePicturesStyles({ style: radio }));
+		dispatch(updatePicturesStyles({ style: radio })).unwrap()
+		.then((originalPromiseResult) => {
+			dispatch(setAlert({componentName:'updatePicturesStyles', alertType:'success', msg:'Settings are updated.'}));
+		})
+		.catch((rejectedValueOrSerializedError) => {
+		  // handle error here
+		  dispatch(setAlert({componentName:'updatePicturesStyles', alertType:'danger', msg:'Erron. Please try again.'}));
+		});
 	};
 
   //promotion toggle ON/OFF
   const radiovalue1 = useSelector((state) => state.settings.data.promotions);
 	const [radio1, setRadio1] = useState(radiovalue1 ? radiovalue1 : null);
 	const handleRadioUpdate1 = () => {
-		dispatch(togglePromotions({ style: radio1 }));
+		dispatch(togglePromotions({ style: radio1 })).unwrap()
+		.then((originalPromiseResult) => {
+			dispatch(setAlert({componentName:'handleRadioUpdate1', alertType:'success', msg:'Settings are updated.'}));
+		})
+		.catch((rejectedValueOrSerializedError) => {
+		  // handle error here
+		  dispatch(setAlert({componentName:'handleRadioUpdate1', alertType:'danger', msg:'Erron. Please try again.'}));
+		});
 	};
 
 	const promovalue = useSelector((state) => state.settings.data);
@@ -25,7 +41,14 @@ const Settings = () => {
 	const [details, setDetails] = useState(promovalue ? promovalue.promodetails : null);
 
 	const handlePromoUpdate=()=>{
-		dispatch(updatePromo({title,details}))
+		dispatch(updatePromo({title,details})).unwrap()
+		.then((originalPromiseResult) => {
+			dispatch(setAlert({componentName:'handlePromoUpdate', alertType:'success', msg:'Settings are updated.'}));
+		})
+		.catch((rejectedValueOrSerializedError) => {
+		  // handle error here
+		  dispatch(setAlert({componentName:'handlePromoUpdate', alertType:'danger', msg:'Erron. Please try again.'}));
+		});
 	}
 	return (
 		<div>
@@ -34,6 +57,7 @@ const Settings = () => {
 				<div className="show-apt-header">
 					<h2>Grid OR Slider</h2>
 				</div>
+				<Alerts componentName={"updatePicturesStyles"} />
 				<div className="settings-container">
 					<label class="radio-container">
 						Grid
@@ -65,6 +89,7 @@ const Settings = () => {
 				<div className="show-apt-header">
 					<h2>Promotions</h2>
 				</div>
+				<Alerts componentName={"handleRadioUpdate1"} />
 				<div className="settings-container">
 					<label class="radio-container">
 						ON
@@ -97,6 +122,7 @@ const Settings = () => {
 				<div className="show-apt-header">
 					<h2>Promotion Details</h2>
 				</div>
+				<Alerts componentName={"handlePromoUpdate"} />
 				<div className="promo-info">
 				<p>
 								<input type="text" name="title"  value={title} 

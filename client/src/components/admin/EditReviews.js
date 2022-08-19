@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import AddReview from './AddReview';
 import DisplayReviews from './DisplayReviews';
+import Alerts from '../Alerts';
 
 const EditReviews = () => {
   const reviews = useSelector((state)=>state.settings.data.reviews);
@@ -22,6 +23,7 @@ const EditReviews = () => {
         })}
         <div><AddReview /></div>
       </div>
+      <Alerts componentName={"review"} />
 			</div>
 
             <div className="show-apt-data card">
