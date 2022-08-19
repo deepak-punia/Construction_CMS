@@ -30,7 +30,13 @@ const EditReviews = () => {
 				<div className="show-apt-info">
 					<h2>Info</h2>
 				</div>
-      some info about reviews.
+        <div className="information-section">
+          <span><i class="fa fa-info-circle"></i> Click on a Delete to delete a review.</span>
+          <span><i class="fa fa-info-circle"></i> Fill out Name, Position and Details and click on Add button to add a review.</span>
+          <span><i class="fa fa-info-circle"></i> Characters limit for Name is 30.</span>
+          <span><i class="fa fa-info-circle"></i> Characters limit for Position is 30.</span>
+          <span><i class="fa fa-info-circle"></i> Characters limit for Details is 200.</span>
+        </div>
 			</div>
     </div>
     

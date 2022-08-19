@@ -117,7 +117,13 @@ const Slidersettings = () => {
         <div className="show-apt-info">
           <h2>Info</h2>
         </div>
-        info here
+        <div className="information-section">
+          <span><i class="fa fa-info-circle"></i> Click on a Delete button to delete a image from Slider.</span>
+          <span><i class="fa fa-info-circle"></i> Select a image and click on Upload button to upload image for Slider.</span>
+          <span><i class="fa fa-info-circle"></i> Make sure images are large enough to avoid pixal breaking.</span>
+          <span><i class="fa fa-info-circle"></i> Recommanded image size is 2000x1000.</span>
+          <span><i class="fa fa-info-circle"></i> Slider images Limit is 6. Delete a image first to upload new image.</span>
+        </div>
       </div>
     </div>
   );

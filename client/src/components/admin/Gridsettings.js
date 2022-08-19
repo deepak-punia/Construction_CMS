@@ -92,7 +92,13 @@ const Gridsettings = () => {
         <div className="show-apt-info">
           <h2>Info</h2>
         </div>
-        info here
+        <div className="information-section">
+          <span><i class="fa fa-info-circle"></i> Click on a Delete button to delete a image from Grid.</span>
+          <span><i class="fa fa-info-circle"></i> Select a image and click on Upload button to upload image for Grid.</span>
+          <span><i class="fa fa-info-circle"></i> Make sure images are large enough to avoid pixal breaking.</span>
+          <span><i class="fa fa-info-circle"></i> Recommanded image size is 1000x1000.</span>
+          <span><i class="fa fa-info-circle"></i> Grid images Limit is 4. Delete a image first to upload new image.</span>
+        </div>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const AddReview = () => {
             type="text"
             name="name"
             value={name}
-            maxLength={15}
+            maxLength={30}
             placeholder="Name"
             onChange={(e) => setName(e.target.value)}
           />
@@ -46,7 +46,7 @@ const AddReview = () => {
             type="text"
             name="position"
             value={position}
-            maxLength={20}
+            maxLength={30}
             placeholder="Position"
             onChange={(e) => setPosition(e.target.value)}
           />
@@ -66,7 +66,7 @@ const AddReview = () => {
       </div>
       <div className="display-review-button">
         <button className="select-button" onClick={handleReviewUpdate}>
-          Update
+          Add
         </button>
       </div>
     </div>
