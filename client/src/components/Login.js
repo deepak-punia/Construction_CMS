@@ -6,7 +6,7 @@ import { setAlert } from "../reducers/alert";
 import './login.css';
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({setShow}) => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [pass, setPass] = useState("");
@@ -35,7 +35,7 @@ const Login = () => {
 			<Alerts componentName={"login"} />
 			<div className="contact-container">
 				<div className="contact-top">
-					<h3>Contact</h3>
+					<h3>Login</h3>
 				</div>
 				<div className="contact-bottom">
 					<div className="contact_info">
@@ -43,11 +43,11 @@ const Login = () => {
 									Go to Dashboard
 								</button></div> : <form name="loginform" method="POST" data-netlify="true">
 							<p>
-								<input type="email" name="email" placeholder="email"  value={email} 
+								<input type="email" name="email" placeholder="Email"  value={email} 
                                 onChange={(e) => setEmail(e.target.value)}/>
 							</p>
 							<p>
-								<input type="text" name="pass" placeholder="password" value={pass}
+								<input type="password" name="pass" placeholder="Password" value={pass}
                                 onChange={(e) => setPass(e.target.value)}
                                 />
 							</p>
@@ -56,7 +56,11 @@ const Login = () => {
 								<button className="button" onClick={handleLoginSubmit}>
 									Login
 								</button>
+								
 							</p>
+							<p>Don't have account?<div className="register-button" onClick={()=>{setShow(false)}}>
+									Register
+								</div></p>
 						</form>}
 					</div>
 				</div>

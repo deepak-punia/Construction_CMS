@@ -8,11 +8,18 @@ const Dashboards = () => {
   const appointments = useSelector((state) => state.appointments);
 
   const today = new Date();
-  let month = today.getUTCMonth() + 1; //months from 1-12
-  let day = today.getUTCDate();
-  let year = today.getUTCFullYear();
+  let month = today.getMonth() + 1; //months from 1-12
+  let day = today.getDate();
+  let year = today.getFullYear();
   let newdate = year + "/" + month + "/" + day;
+  
   const aptToday = appointments?.allapt?.filter((item) => item.apt_date === newdate);
+
+  const handCancelclk = () => {
+    const info1 = document.getElementById("apt-info-data");
+    info1.style.width = "0px";
+    
+  };
 
   useEffect(() => {
     dispatch(getallapt());
@@ -26,7 +33,7 @@ const Dashboards = () => {
 
         <div style={{ display: "flex" }}>
           <AptDetails aptData={aptToday} />
-          <div id="apt-info-data" className="apt-info-data"></div>
+          <div style={{cursor: 'pointer'}} onClick={handCancelclk} id="apt-info-data" className="apt-info-data"></div>
         </div>
       </div>
       <div className="show-apt-data card">

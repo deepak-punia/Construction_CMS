@@ -26,6 +26,21 @@ export const login = createAsyncThunk('api/login', async ({ email, password }) =
     return response.data;
   });
 
+  export const register = createAsyncThunk('api/register', async ({ name,email,phone, password }) => {
+    const body = JSON.stringify({  name,email,phone, password });
+    const config = {
+			headers: {
+				"Content-Type": "application/json",
+			},
+		};
+    const response = await axios.post(
+        `${API_ENDPOINT}/api/users/register`,
+        body,
+        config
+    );
+    return response.data;
+  });
+
 export const loadUser = createAsyncThunk('api/loadUser', async () => {
   if (localStorage.token) {
 		setAuthToken(localStorage.token);
@@ -72,6 +87,22 @@ export const loadUser = createAsyncThunk('api/loadUser', async () => {
           state.isAuthenticated=false;
           state.error= action.payload;
           console.log('error in Login');
+        })
+        .addCase(register.pending, (state, action) => {
+          state.loading = true;
+        })
+        .addCase(register.fulfilled, (state, action) => {
+          state.loading = false;
+          state.isAuthenticated=true;
+          localStorage.setItem("token", action.payload.token);
+          
+        })
+        .addCase(register.rejected, (state, action) => {
+          state.loading = false;
+          state.user = null;
+          state.isAuthenticated=false;
+          state.error= action.payload;
+          console.log('error in register');
         })
         .addCase(loadUser.pending, (state, action) => {
           state.loading = true;

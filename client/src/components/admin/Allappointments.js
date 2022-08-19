@@ -6,7 +6,7 @@ const Allappointments = () => {
   const appointments = useSelector((state) => state.appointments.allapt);
 
   const handCancelclk = () => {
-    console.log('runing')
+    //console.log('runing')
     const info1 = document.getElementById("apt-info-data");
     info1.style.width = "0px";
     
