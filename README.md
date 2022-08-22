@@ -24,18 +24,19 @@ NOTE: Files are uploaded to the app but then disappear or are deleted after a wh
 - Admin can customize Promotions, Reviews, Pictures display style, removed or add new pictures, view users/appointments, delete users/appointments.
 
 
-## Screenshots
+## Layout
 
 ![This is an image](https://github.com/deepak-punia/Construction_CMS/blob/main/uploads/1.gif?raw=true)
 
-![This is an image](https://github.com/deepak-punia/complaint-management-software/blob/main/uploads/dashboard.jpg?raw=true)
 
-![This is an image](https://github.com/deepak-punia/complaint-management-software/blob/main/uploads/screen1.jpg?raw=true)
+## Responsive Layout ( CSS animations, flex, grid)
 
-![This is an image](https://github.com/deepak-punia/complaint-management-software/blob/main/uploads/screen2.jpg?raw=true)
+![This is an image](https://github.com/deepak-punia/Construction_CMS/blob/main/uploads/2.gif?raw=true)
 
-![This is an image](https://github.com/deepak-punia/complaint-management-software/blob/main/uploads/screen3.jpg?raw=true)
 
-![This is an image](https://github.com/deepak-punia/complaint-management-software/blob/main/uploads/users.jpg?raw=true)
+## Customizable
+
+![This is an image](https://github.com/deepak-punia/Construction_CMS/blob/main/uploads/3.gif?raw=true)
+
 
  
