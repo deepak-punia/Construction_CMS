@@ -23,6 +23,8 @@ NOTE: Files are uploaded to the app but then disappear or are deleted after a wh
 
 - Admin can customize Promotions, Reviews, Pictures display style, removed or add new pictures, view users/appointments, delete users/appointments.
 
+- State Management via Redux Toolkit.
+
 
 ## Layout
 
