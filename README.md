@@ -31,7 +31,7 @@ NOTE: Files are uploaded to the app but then disappear or are deleted after a wh
 ![This is an image](https://github.com/deepak-punia/Construction_CMS/blob/main/uploads/1.gif?raw=true)
 
 
-## Responsive Layout ( CSS animations, flex, grid)
+## Responsive Layout ( CSS animations, flex, grid, swiper)
 
 ![This is an image](https://github.com/deepak-punia/Construction_CMS/blob/main/uploads/2.gif?raw=true)
 
